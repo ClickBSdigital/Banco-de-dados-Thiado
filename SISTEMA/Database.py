@@ -5,7 +5,7 @@ class Database():
         self.banco = banco
 
     def connect(self):
-        self.conn = mysql.connector.connect(host='localhost',database=self.banco,user='root',password='')
+        self.conn = mysql.connector.connect(host='10.28.2.114',database=self.banco,user='devweb',password='suporte@22')
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -13,3 +13,6 @@ class Database():
             print("Conectado com suceso!")
         else:
             print("Erro!!")
+
+d1 = Database()
+d1.connect()
