@@ -4,13 +4,21 @@ class Database():
     def __init__(self, banco="syspython"):
         self.banco = banco
 
+    # def connect(self):
+    #     self.conn = mysql.connector.connect(
+    #     host='10.28.2.114',
+    #     database=self.banco,
+    #     user='devweb',
+    #     password='suporte@22'
+    #     ) QUANDO O BANCO ESTA NO SERVIDOR LINUX
     def connect(self):
         self.conn = mysql.connector.connect(
-        host='10.28.2.114',
+        host='localhost',
         database=self.banco,
-        user='devweb',
-        password='suporte@22'
+        user='root',
+        password=''
         )
+        # ) QUANDO O BANCO ESTA NO WINDOS
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -138,4 +146,4 @@ if __name__ == '__main__':
     db.select_client_by_id(1)
     db.close_connection()
     # db.delete_client(2)
-    db.update_client(13)
+    db.update_client(6)
