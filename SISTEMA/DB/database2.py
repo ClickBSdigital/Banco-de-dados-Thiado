@@ -23,7 +23,7 @@ class Database():
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
-            print("Conectado com suceso!")
+            print("Conectado com suceso!",db_info)
         else:
             print("Erro!!")
 
@@ -140,10 +140,12 @@ d1.connect()
 
 if __name__ == '__main__':
     db = Database()
-    # db.connect()
+    db.connect()
     # db.insert_client()
     # db.select_client()
-    db.select_client_by_id(1)
-    db.close_connection()
+    # db.select_client_by_id(1)
+    # db.close_connection()
     # db.delete_client(2)
-    db.update_client(6)
+    # db.update_client(6)
+
+
